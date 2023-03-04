@@ -76,7 +76,7 @@ $token = $_SESSION['csrf_token'];
                     $('#resultBox').fadeIn('slow');
                     setTimeout(function() {
                         $('#resultBox').fadeOut('slow');
-                    }, 5000);
+                    }, 3000);
                 }
             });
         });

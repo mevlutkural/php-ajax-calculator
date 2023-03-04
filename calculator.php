@@ -2,12 +2,10 @@
 @session_start();
 
 if (!$_POST['_token'] || $_POST['_token'] !== $_SESSION['csrf_token']) {
-    echo "Token hatası";
-    die;
+    die("Token hatası");
 }
 
-if ($_POST && is_numeric($_POST['n1']) && is_numeric($_POST['n2'] && $_POST['custom'] != '1')) {
-
+if ($_POST && is_numeric($_POST['n1']) && is_numeric($_POST['n2']) && $_POST['custom'] != '1') {
     $result = 'hatalı giriş ';
     switch ($_POST['option']) {
         case '+':
@@ -33,7 +31,7 @@ if ($_POST && is_numeric($_POST['n1']) && is_numeric($_POST['n2'] && $_POST['cus
     for ($i = 0; $i <= $_POST['n1']; $i++) {
         $result += $i;
     }
-    echo 'Sonuç : ' . $result;
+    echo 'Faktoriyel sonucu : ' . $result;
 } else {
-    echo 'Hatalı giriş.';
+    echo 'Hatalı giriş.'.$_POST['custom'];
 }
